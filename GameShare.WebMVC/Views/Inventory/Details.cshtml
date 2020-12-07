@@ -1,0 +1,73 @@
+﻿@model GameShare.Models.Inventory.InventoryDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Your Inventory</h2>
+
+<div>
+    <h4>Inventory Id#:  @Html.DisplayFor(model => model.InventoryId)</h4>
+    <hr />
+    @if (Model.Games.Count > 0)
+    {
+        <h3>Games</h3>
+        <table class="table">
+            <tr class="tableHead">
+                <td>
+                    Game Name
+                </td>
+                <td>
+                    Console
+                </td>
+                <td>
+                    For Share
+                </td>
+            </tr>
+            @foreach (var game in Model.Games)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(gameName => game.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(gameConsole => game.GameConsole)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(gameShare => game.ForRent)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+    @if (Model.UserConsoles.Count > 0)
+    {
+        <h3>Consoles</h3>
+        <table class="table">
+            <tr class="tableHead">
+                <td>
+                    Console Name
+                </td>
+                <td>
+                    For Share
+                </td>
+            </tr>
+            @foreach (var console in Model.UserConsoles)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(consoleName => console.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(consoleShare => console.ForRent)
+            </td>
+        </tr>
+            }
+
+        </table>
+    }
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

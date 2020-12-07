@@ -1,0 +1,57 @@
+﻿@model GameShare.Models.Game.GameDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Game Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GameId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameConsole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameConsole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ForRent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ForRent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InventoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventoryId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

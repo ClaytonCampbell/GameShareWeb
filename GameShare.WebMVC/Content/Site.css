@@ -1,0 +1,70 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Alatsi&display=swap');
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url('../Content/Images/videogamecontroller_background1200.png');
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    color: lightgray;
+    font-family: 'Alatsi', sans-serif;
+}
+a {
+    color: yellow;
+}
+a:hover {
+    color: yellow;
+}
+.tableHead {
+    background-color: rgb(93, 93, 95, .5);
+}
+#icon {
+    width: 2.5em;
+    float: left;
+    position: absolute;
+    margin-left: -2.5em;
+    margin-top: .5em;
+}
+#icon:hover {
+        opacity: 0%;
+    }
+#iconBack {
+    width: 2.5em;
+    margin-top: .5em;
+}
+.homeIcon:hover > #icon {
+    opacity: 0%;
+}
+.jumbotron {
+    background-color: rgba(35, 35, 36, 0.75);
+}
+.consoleImage {
+    height: 95%;
+    width: 15%;
+    position: fixed;
+    margin: 0 -55% 0 55%;
+}
+#console{
+    height: 100%;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}

@@ -1,0 +1,21 @@
+﻿@model GameShare.Models.Inventory.InventoryCreate
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Start Your Journey With Game Share</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-11">
+                <input type="submit" value="Start Now" class="btn btn-default" /> @Html.ActionLink("Back Home", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+}

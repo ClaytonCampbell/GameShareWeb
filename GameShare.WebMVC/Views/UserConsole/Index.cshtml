@@ -1,0 +1,51 @@
+﻿@model IEnumerable<GameShare.Models.UserConsole.UserConsoleListitem>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Console Index</h2>
+
+<p>
+    @Html.ActionLink("Add a Console", "Create")
+</p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <script>
+        alert("@TempData["SaveResult"]");
+    </script>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ForRent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InventoryId)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ForRent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InventoryId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ConsoleId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ConsoleId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ConsoleId })
+            </td>
+        </tr>
+    }
+</table>
+<h3> @Html.ActionLink("Back to Inventory", "Index", "Inventory")</h3>

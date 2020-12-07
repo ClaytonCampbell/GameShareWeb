@@ -1,0 +1,50 @@
+﻿@model GameShare.Models.UserConsole.UserConsoleDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Console Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsoleId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsoleId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ForRent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ForRent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InventoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventoryId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.ConsoleId  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<GameShare.Models.Inventory.InventoryListItem>
+@{
+    ViewBag.Title = "Index";
+}
+
+@if ((Model.Count() > 0) == false)
+{
+
+    <h2>Inventory Creation</h2>
+    if (Request.IsAuthenticated)
+    {
+        <p>
+            @Html.ActionLink("Begin Your Collection", "Create", null, new { @class = "btn btn-default" })
+        </p>
+    }
+
+}
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success" role="alert">
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+@if ((Model.Count() > 0) == true)
+{
+    <h2>Inventory Index</h2>
+    <h3>
+        @Html.DisplayNameFor(model => model.InventoryId): @foreach (var item in Model)
+        {
+            @Html.DisplayFor(modelItem => item.InventoryId)
+        }
+    </h3>
+    <div class="col-md-6">
+        <h3>@foreach (var item in Model)
+            {@Html.ActionLink("View Library", "Details", new { id = item.InventoryId })}
+        </h3>
+    </div>
+    <div class="col-md-2 col-md-offset-4">
+        <h3>
+            @foreach (var item in Model)
+            {@Html.ActionLink("Delete Library", "Delete", new { id = item.InventoryId })}
+    </h3>
+    </div>
+
+
+
+    <div class="col-md-6">
+        <table class="table">
+            <tr>
+                <th>
+                    Number of Games: @foreach (var item in Model)
+                    {@Html.DisplayFor(modelItem => item.GameCount)}
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink("Add a Game", "Create", "Game")
+                    </td>
+                    <td>
+                        @Html.ActionLink("View All Games", "Index", "Game")
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <tr>
+                <th>
+                    Number of Consoles: @foreach (var bit in Model)
+                    {@Html.DisplayFor(modelItem => bit.ConsoleCount)}
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var bit in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink("Add a Console", "Create", "UserConsole")
+                    </td>
+                    <td>
+                        @Html.ActionLink("View All Consoles", "Index", "UserConsole")
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+}
