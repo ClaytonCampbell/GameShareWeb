@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Details";
 }
-
 <h2>Your Inventory</h2>
 
 <div>
@@ -55,14 +54,14 @@
             </tr>
             @foreach (var console in Model.UserConsoles)
             {
-        <tr>
-            <td>
-                @Html.DisplayFor(consoleName => console.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(consoleShare => console.ForRent)
-            </td>
-        </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(consoleName => console.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(consoleShare => console.ForRent)
+                    </td>
+                </tr>
             }
 
         </table>
